@@ -13,6 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('home');
+Route::get('/', \App\Http\Controllers\IndexController::class)->name('home');
+Route::get('/support', [\App\Http\Controllers\SupportController::class, 'index'])->name('support');
